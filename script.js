@@ -96,17 +96,20 @@ style.innerHTML = `
 
 document.head.appendChild(style);
 
+// To create features in select 
 function MultiselectDropdown(options) {
+    console.log(options);
   var config = {
     search: true,
-    height: "15rem",
-    placeholder: "select",
+    height: "20rem",
+    placeholder: "Select",
     txtSelected: "selected",
     txtAll: "All",
     txtRemove: "Remove",
     txtSearch: "search",
     ...options,
   };
+
 
   function newEl(tag, attrs) {
     var e = document.createElement(tag);
@@ -125,6 +128,7 @@ function MultiselectDropdown(options) {
     return e;
   }
 
+  
   document.querySelectorAll("select[multiple]").forEach((el, k) => {
     var div = newEl("div", {
       class: "multiselect-dropdown",
